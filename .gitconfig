@@ -1,0 +1,25 @@
+# This is Git's per-user configuration file.
+[core]
+        editor = vim
+[alias]
+        st = status
+        ci = commit
+        co = checkout
+        gl = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        ps = pull --stat
+        logme = log --author='Pedro'
+        ds = diff --staged
+        wbc = branch -r --contains
+        ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
+[user]
+# Please adapt and uncomment the following lines:
+        name = Pedro Teixeira
+        email = pedro.ap.teixeira@gmail.com
+[includeIf "gitdir:~/projects/nap/"]
+        path = ~/.gitconfig-nap
+[includeIf "gitdir:~/projects/style-council"]
+        path = ~/.gitconfig-nap
+[includeIf "gitdir:~/projects/yos"]
+        path = ~/.gitconfig-nap
+[merge]
+        tool = opendiff
