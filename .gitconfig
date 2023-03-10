@@ -11,6 +11,8 @@
         ds = diff --staged
         wbc = branch -r --contains
         ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
+        diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+        clean-branches = !git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
 [user]
 # Please adapt and uncomment the following lines:
         name = Pedro Teixeira
