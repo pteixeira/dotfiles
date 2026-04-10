@@ -22,11 +22,11 @@
 # Please adapt and uncomment the following lines:
         name = Pedro Teixeira
         email = pedro.ap.teixeira@gmail.com
-[includeIf "gitdir:~/projects/nap/"]
-        path = ~/.gitconfig-nap
-[includeIf "gitdir:~/projects/style-council"]
-        path = ~/.gitconfig-nap
-[includeIf "gitdir:~/projects/yos"]
-        path = ~/.gitconfig-nap
+
+# includeIf example
+# [includeIf "gitdir:~/projects/nap/"]
+#       path = ~/.gitconfig-nap
+# end of includeIf example
+
 [merge]
         tool = opendiff
