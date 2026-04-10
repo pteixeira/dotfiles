@@ -13,6 +13,11 @@
         ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
         diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
         clean-branches = !git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+        most-changes = git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
+        show-contributors = git shortlog -sn --no-merges
+        show-bug-density = git log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20
+        show-commit-count = git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+        show-firefighting = git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
 [user]
 # Please adapt and uncomment the following lines:
         name = Pedro Teixeira
